@@ -41,8 +41,8 @@ class Handler extends Application
         $output->writeln(
             [
                 '',
-                '<comment>-------------------------</comment>',
-                '<question>Pre-Commit Handler</question>',
+                '<comment>---<question>Pre-Commit Handler</question>---</comment>',
+                '',
                 '',
                 '<info>Running Pre-Commit hooks.</info>'
             ]
