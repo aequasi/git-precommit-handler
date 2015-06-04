@@ -41,7 +41,7 @@ class Handler extends Application
         $output->writeln(
             [
                 '-------------------------',
-                '<debug>Pre-Commit Handler</debug>',
+                '<question>Pre-Commit Handler</question>',
                 '',
                 '<info>Running Pre-Commit hooks.</info>'
             ]
