@@ -1,0 +1,10 @@
+#!/usr/bin/php
+<?php
+
+require_once __DIR__ . (basename(__DIR__) === '.git' ? '/../../vendor/autoload.php' : '/../vendor/autoload.php');
+
+use Symfony\Component\Yaml\Yaml;
+
+$handler = new \Aequasi\PreCommitHandler\Handler(Yaml::parse(file_get_contents(__DIR__.'../../pre-commit-hook.yml')));
+
+$handler->run();
