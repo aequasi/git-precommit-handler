@@ -1,0 +1,30 @@
+{
+    "name": "aequasi/git-precommit-handler",
+    "description": "Git Pre-Commit Handler",
+    "type": "library",
+    "license": "Apache",
+    "authors": [
+        {
+            "name":  "Aaron Scherer",
+            "email": "aequasi@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/console": "~2.7.0",
+        "symfony/process": "~2.7.0",
+        "symfony/yaml":    "~2.7.0"
+    },
+    "require-dev": {
+        "composer/composer": "~1.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aequasi\\PreCommitHandler\\": "src/"
+        }
+    },
+    "scripts": {
+        "pre-update-cmd":  "Aequasi\\PreCommitHandler\\HookScript::install",
+        "pre-install-cmd": "Aequasi\\PreCommitHandler\\HookScript::install"
+    }
+}
