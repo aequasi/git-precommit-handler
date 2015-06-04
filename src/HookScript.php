@@ -19,7 +19,7 @@ class HookScript
 {
     public static function install(Event $event)
     {
-        $gitDir     = realpath(__DIR__.'/../.git');
+        $gitDir     = realpath(__DIR__.'/../../../../.git');
         $gitFile    = $gitDir.'/hooks/pre-commit';
         $scriptFile = __DIR__.'/../scripts/pre-commit';
 
