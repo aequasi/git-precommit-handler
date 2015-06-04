@@ -49,9 +49,12 @@ class Handler extends Application
         );
 
 
+        $status = 1;
         foreach ($this->commands as $command) {
             $process = new Process($command, __DIR__ . '../../');
-            $process->mustRun();
+            if ($process->run() === 0) {
+                return 0;
+            }
             $output->writeln($process->getOutput());
         }
 
