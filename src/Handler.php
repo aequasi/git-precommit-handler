@@ -38,12 +38,14 @@ class Handler extends Application
 
     public function doRun(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln("Running Pre-Commit hooks.");
+        $output->writeln("<info>Running Pre-Commit hooks.</info>");
+        
         foreach ($this->commands as $command) {
             $process = new Process($command, __DIR__ . '../../');
             $process->mustRun();
             $output->writeln($process->getOutput());
         }
-        $output->writeln("Finished running Pre-Commit hooks.");
+
+        $output->writeln("<info>Finished running Pre-Commit hooks.</info>");
     }
 }
