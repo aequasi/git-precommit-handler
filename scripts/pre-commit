@@ -1,5 +1,6 @@
-#!/usr/bin/php
+#!/usr/bin/env php
 <?php
+echo "WHAT THE FUCK!";
 
 require_once __DIR__ . (basename(__DIR__) === '.git' ? '/../../vendor/autoload.php' : '/../vendor/autoload.php');
 
