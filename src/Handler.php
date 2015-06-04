@@ -40,7 +40,8 @@ class Handler extends Application
     {
         $output->writeln(
             [
-                '-------------------------',
+                '',
+                '<comment>-------------------------</comment>',
                 '<question>Pre-Commit Handler</question>',
                 '',
                 '<info>Running Pre-Commit hooks.</info>'
@@ -56,8 +57,9 @@ class Handler extends Application
 
         $output->writeln(
             [
+                '',
                 "<info>Finished running Pre-Commit hooks.</info>",
-                '-------------------------',
+                '<comment>-------------------------</comment>',
                 ''
             ]
         );
