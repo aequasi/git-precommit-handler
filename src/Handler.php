@@ -32,7 +32,6 @@ class Handler extends Application
      */
     public function __construct(array $commands)
     {
-        die("FUCK!");
         $this->commands = $commands;
         parent::__construct('Pre Commit Handler');
     }
