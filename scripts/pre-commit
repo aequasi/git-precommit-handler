@@ -1,11 +1,19 @@
 #!/usr/bin/env php
 <?php
-echo "WHAT THE FUCK!";
 
-require_once __DIR__ . (basename(__DIR__) === '.git' ? '/../../vendor/autoload.php' : '/../vendor/autoload.php');
+$baseDir = realpath(__DIR__ . (basename(realpath(__DIR__.'/../')) === '.git' ? '/../../' : '/../'));
+
+require_once $baseDir . '/vendor/autoload.php';
 
 use Symfony\Component\Yaml\Yaml;
 
-$handler = new \Aequasi\PreCommitHandler\Handler(Yaml::parse(file_get_contents(__DIR__.'../../pre-commit-hook.yml')));
+
+$config = $baseDir.'/pre-commit-hook.yml';
+$commands = [];
+if (file_exists($config)) {
+    $commands = Yaml::parse(file_get_contents($config));
+}
+
+$handler = new \Aequasi\PreCommitHandler\Handler($commands);
 
 $handler->run();

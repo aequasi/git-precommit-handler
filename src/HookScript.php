@@ -31,6 +31,7 @@ class HookScript
         $scriptHook = file_get_contents($scriptFile);
         if (!file_exists($gitFile) || $scriptHook !== file_get_contents($gitFile)) {
             copy($scriptFile, $gitFile);
+            chmod($gitFile, 0711);
         }
 
         return true;
