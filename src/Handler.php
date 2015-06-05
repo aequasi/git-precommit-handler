@@ -52,10 +52,18 @@ class Handler extends Application
         $status = 1;
         foreach ($this->commands as $command) {
             $process = new Process($command, __DIR__ . '../../');
+            $output->write($command."......");
             if ($process->run() === 1) {
+
+                $output->writeln(' Failed.');
+                $output->writeln("<error>{$command} failed</error>");
+                $output->writeln($process->getOutput());
+                $output->writeln("<error>{$command} failed</error>");
+
                 return 1;
             }
-            $output->writeln($process->getOutput());
+            $output->writeln(' Success.');
+
         }
 
         $output->writeln(
