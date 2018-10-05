@@ -1,3 +1,7 @@
+# This project is deprecated
+
+It is replaced by https://github.com/aequasi/git-hook-handler
+
 # git-precommit-handler
 
 
